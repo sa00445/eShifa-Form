@@ -4,58 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eShifa Booking Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <style>
-        /* Add your website's CSS styles here to match the UI */
         body {
-            font-family: Arial, sans-serif; /* Replace with the font used on eShifa's website */
+            font-family: 'Source Sans Pro', sans-serif;
         }
-        .booking-form {
-            width: 300px;
+
+        .eshifa-form {
+            max-width: 400px;
             margin: 50px auto;
             padding: 20px;
             border: 1px solid #ccc;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input, select {
+
+        .eshifa-form label,
+        .eshifa-form input,
+        .eshifa-form select,
+        .eshifa-form button {
             width: 100%;
             padding: 10px;
+            margin-bottom: 10px;
             border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
         }
-        button {
-            padding: 10px 15px;
-            background-color: #007BFF; /* Replace with the primary color of eShifa's website */
-            color: #fff;
+
+        .eshifa-form button {
+            background-color: #027ad6;
+            color: white;
             border: none;
             cursor: pointer;
+        }
+
+        .eshifa-form button:hover {
+            background-color: #015a9c;
+        }
+
+        .eshifa-form input[type="search"] {
+            padding-right: 40px;
         }
     </style>
 </head>
 <body>
-    <div class="booking-form">
-        <h2>Book a Test with eShifa</h2>
-        <form action="submit_url_here" method="post">
-            <div class="form-group">
-                <label for="testType">Type of Test:</label>
-                <select id="testType" name="testType">
-                    <option value="lab">Lab Test</option>
-                    <option value="physio">Physio Test</option>
-                    <option value="nursing">Nursing Test</option>
-                    <option value="pharmacy">Pharmacy Test</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="bookingTime">Preferred Time:</label>
-                <input type="time" id="bookingTime" name="bookingTime">
-            </div>
-            <button type="submit">Book Now</button>
-        </form>
-    </div>
+
+<div class="eshifa-form">
+    <form action="#" method="post">
+        <label for="name">Patient Name:</label>
+        <input type="text" id="name" name="patient_name" required>
+
+        <label for="time">Preferred Time:</label>
+        <input type="time" id="time" name="preferred_time" required>
+
+        <label for="date">Preferred Date:</label>
+        <input type="date" id="date" name="preferred_date" required>
+
+        <label for="test">Type of Test:</label>
+        <input type="search" id="test" name="type_of_test" list="tests" placeholder="Search for a test..." required>
+        <datalist id="tests">
+            <option value="Blood Test">
+            <option value="X-Ray">
+            <option value="MRI">
+            <option value="CT Scan">
+            <!-- Add more tests as needed -->
+        </datalist>
+
+        <button type="submit">Book Now</button>
+    </form>
+</div>
+
 </body>
 </html>
