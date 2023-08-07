@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eShifa Booking Form</title>
+    <style>
+        /* Add your website's CSS styles here to match the UI */
+        body {
+            font-family: Arial, sans-serif; /* Replace with the font used on eShifa's website */
+        }
+        .booking-form {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF; /* Replace with the primary color of eShifa's website */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="booking-form">
+        <h2>Book a Test with eShifa</h2>
+        <form action="submit_url_here" method="post">
+            <div class="form-group">
+                <label for="testType">Type of Test:</label>
+                <select id="testType" name="testType">
+                    <option value="lab">Lab Test</option>
+                    <option value="physio">Physio Test</option>
+                    <option value="nursing">Nursing Test</option>
+                    <option value="pharmacy">Pharmacy Test</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="bookingTime">Preferred Time:</label>
+                <input type="time" id="bookingTime" name="bookingTime">
+            </div>
+            <button type="submit">Book Now</button>
+        </form>
+    </div>
+</body>
+</html>
